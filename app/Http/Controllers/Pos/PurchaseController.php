@@ -45,6 +45,7 @@ class PurchaseController extends Controller
     return redirect()->back( )->with($notification);
     } else {
 
+
         $count_category = count($request->category_id);
         for ($i=0; $i < $count_category; $i++) {
             $purchase = new Purchase();

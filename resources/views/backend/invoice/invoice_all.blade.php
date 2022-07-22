@@ -45,17 +45,16 @@
                                         <td> #{{ $item->invoice_no }} </td>
                                         <td> {{ date('d-m-Y',strtotime($item->date))  }} </td>
 
-
                                         <td class="text-center">
                                             @if($item['payment']['due_amount'] > '0')
-                                            <span class="btn btn-warning">Invoice Pending</span>
+                                            <span class="btn btn-warning">Credit Active</span>
                                             @elseif($item['payment']['due_amount'] == '0')
                                             <span class="btn btn-success">Invoice Paid</span>
                                             @endif
                                             </td>
-                                        <td>  $ {{ $item['payment']['total_amount'] }} </td>
+                                        <td>  $ {{ $item['payment']['due_amount'] }} </td>
                                     </tr>
-                                @endforeach
+                                            @endforeach
                             </tbody>
                         </table>
                     </div>

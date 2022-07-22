@@ -194,7 +194,9 @@ class CustomerController extends Controller
     public function CustomerInvoiceDetails($invoice_id){
 
         $payment = Payment::where('invoice_id',$invoice_id)->first();
-        return view('backend.pdf.invoice_details_pdf',compact('payment'));
+        $payment_details = PaymentDetail::where('invoice_id',$payment->invoice_id)->get();
+
+        return view('backend.pdf.invoice_details_pdf',compact('payment','payment_details'));
 
     }// End Method
 

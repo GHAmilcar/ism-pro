@@ -29,14 +29,14 @@
 
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                        <thead>
+                        <thead class="table-dark">
                         <tr>
                             <th>Sl</th>
                             <th>Name</th>
                             <th>Supplier Name </th>
                             <th>Unit</th>
-                            <th>Category</th>
-                            <th>Action</th>
+                            <th class="text-center">Stock</th>
+                            <th class="text-center">Action</th>
 
                         </thead>
 
@@ -49,8 +49,8 @@
                             <td> {{ $item->name }} </td>
                             <td> {{ $item['supplier']['name'] }} </td>
                             <td> {{ $item['unit']['name'] }} </td>
-                            <td> {{ $item['category']['name'] }} </td>
-                            <td>
+                            <td class="text-center"> {{ $item->quantity}} </td>
+                            <td class="text-center">
                             <a href="{{ route('product.edit',$item->id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
 
                             <a href="{{ route('product.delete',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>

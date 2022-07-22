@@ -29,7 +29,7 @@
 
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                        <thead>
+                        <thead class="table-dark">
                         <tr>
                             <th class="text-center">Sl</th>
                             <th class="text-center">Customer Name</th>
@@ -50,10 +50,10 @@
                             <td class="text-center"> #{{ $item['invoice']['invoice_no'] }}   </td>
                             <td class="text-center"> {{  date('d-m-Y',strtotime($item['invoice']['date'])) }} </td>
                             <td class="text-center"> ${{ $item->due_amount }} </td>
-                            <td class="text-center">
-                        <a href="{{ route('customer.edit.invoice',$item->invoice_id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
-                        <a href="{{ route('customer.invoice.details.pdf',$item->invoice_id) }}" target="_blank" class="btn btn-danger sm" title="Customer Invoice Details">  <i class="fa fa-eye"></i> </a>
 
+                            <td class="text-center">
+                                <a href="{{ route('customer.edit.invoice',$item->invoice_id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
+                                <a href="{{ route('customer.invoice.details.pdf',$item->invoice_id) }}" target="_blank" class="btn btn-danger sm" title="Customer Invoice Details">  <i class="fa fa-eye"></i> </a>
                             </td>
 
                         </tr>
