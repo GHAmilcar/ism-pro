@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\InvoiceDetail;
 use App\Models\Supplier;
 use App\Models\Unit;
 
@@ -93,13 +94,24 @@ class ProductController extends Controller
 
     public function ProductDelete($id){
 
-       Product::findOrFail($id)->delete();
-            $notification = array(
-            'message' => 'Product Deleted Successfully',
-            'alert-type' => 'success'
-        );
 
+       $invoice_detail = InvoiceDetail::where('product_id',$id)->first();
+       if (isset($invoice_detail) === false) {
+        Product::findOrFail($id)->delete();
+        $notification = array(
+        'message' => 'Product Deleted Successfully',
+        'alert-type' => 'success'
+            );
         return redirect()->back()->with($notification);
+       }
+       else if(isset($invoice_detail) === true){
+        $notification = array(
+            'message' => 'You can not delete this product, because the product is in stock o in the registers of sales',
+            'alert-type' => 'warning'
+        );
+        return redirect()->back()->with($notification);
+       }
+
 
     } // End Method
 

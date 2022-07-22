@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pos;
 
 use App\Http\Controllers\Controller;
+use App\Models\Purchase;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -124,13 +125,24 @@ class UserController extends Controller
     }// End
 
     public function UserDelete($id){
-        User::findOrFail($id)->delete();
 
-        $notification = array(
-            'message' => 'User deleted successfully',
-            'alert-type' => 'success'
-        );
-        return redirect()->route('user.all')->with($notification);
+        $purchases = Purchase::where('created_by',$id)->first();
+
+        if (isset($purchases) === false) {
+            User::findOrFail($id)->delete();
+            $notification = array(
+                'message' => 'User deleted successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('user.all')->with($notification);
+        }
+        else if(isset($purchases) === true){
+            $notification = array(
+                'message' => 'This user cannot be deleted',
+                'alert-type' => 'warning'
+            );
+            return redirect()->route('user.all')->with($notification);
+        }
     }
 
 

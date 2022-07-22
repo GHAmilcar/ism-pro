@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pos;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth as Auth;
 
@@ -73,14 +74,25 @@ class CategoryController extends Controller
 
     public function CategoryDelete($id){
 
-          Category::findOrFail($id)->delete();
 
-       $notification = array(
-            'message' => 'Category Deleted Successfully',
-            'alert-type' => 'success'
+
+       $products = Product::where('category_id',$id)->first();
+       if (isset($products) === false) {
+            Category::findOrFail($id)->delete();
+            $notification = array(
+                'message' => 'Category Deleted Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+       }
+       else if(isset($products) === true){
+        $notification = array(
+            'message' => 'You have products registers with this category, can not be deleted',
+            'alert-type' => 'warning'
         );
-
         return redirect()->back()->with($notification);
+       }
+
 
     } // End Method
 

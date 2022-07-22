@@ -53,7 +53,7 @@
             <!-- end row -->
 
 
-  <div class="row mb-3">
+        <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">Customer Address </label>
                 <div class="form-group col-sm-10">
                     <input name="address" value="{{ $customer->address }}" class="form-control" type="text"  >

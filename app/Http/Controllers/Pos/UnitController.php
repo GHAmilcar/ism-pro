@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pos;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Unit;
 use Illuminate\Support\Carbon;
@@ -73,14 +74,26 @@ class UnitController extends Controller
 
     public function UnitDelete($id){
 
-          Unit::findOrFail($id)->delete();
 
-       $notification = array(
+
+       $products = Product::where('unit_id',$id);
+
+       if (isset($products) === false) {
+        Unit::findOrFail($id)->delete();
+        $notification = array(
             'message' => 'Unit Deleted Successfully',
             'alert-type' => 'success'
         );
-
+       }
+       else if(isset($products) === true){
+        $notification = array(
+            'message' => 'Sorry, you can not delete this unit, because the unit its associate with a or any products',
+            'alert-type' => 'warning'
+        );
         return redirect()->back()->with($notification);
+       }
+
+
 
     } // End Method
 
