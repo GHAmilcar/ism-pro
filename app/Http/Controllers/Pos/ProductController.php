@@ -106,7 +106,7 @@ class ProductController extends Controller
        }
        else if(isset($invoice_detail) === true){
         $notification = array(
-            'message' => 'You can not delete this product, because the product is in stock o in the registers of sales',
+            'message' => 'You can not delete this product, because the product is in stock or in the registers of sales',
             'alert-type' => 'warning'
         );
         return redirect()->back()->with($notification);
