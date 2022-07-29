@@ -42,7 +42,7 @@
                                     <tr>
                                         <td> {{ $key+1}} </td>
                                         <td> {{ $item['payment']['customer']['name'] }} </td>
-                                        <td> #{{ $item->invoice_no }} </td>
+                                        <td> {{ $item->invoice_no }} </td>
                                         <td> {{ date('d-m-Y',strtotime($item->date))  }} </td>
 
                                         <td class="text-center">

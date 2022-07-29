@@ -15,10 +15,10 @@
 
     <div class="row">
 
-         <div class="col-md-1">
+         <div class="col-md-2">
             <div class="md-3">
                 <label for="example-text-input" class="form-label">Inv No</label>
-                 <input class="form-control example-date-input" name="invoice_no" type="text" value="{{ $invoice_no }}"  id="invoice_no" readonly style="background-color:#ddd" >
+                 <input class="form-control example-date-input" name="invoice_no" type="text"  id="invoice_no">
             </div>
         </div>
 
@@ -31,8 +31,8 @@
         </div>
 
 
-       <div class="col-md-3">
-            <div class="md-3">
+       <div class="col-md-2">
+            <div class="md-2">
                 <label for="example-text-input" class="form-label">Category Name </label>
                 <select name="category_id" id="category_id" class="form-select select2" aria-label="Default select example">
                 <option selected="">Open this select menu</option>

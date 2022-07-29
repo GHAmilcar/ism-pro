@@ -15,11 +15,6 @@ use App\Http\Controllers\Pos\InvoiceController;
 use App\Http\Controllers\Pos\StockController;
 use App\Http\Controllers\Pos\UserController;
 
-// Route::get('/', function () {
-//     return view('admin.index');
-// });
-
-
 Route::controller(DemoController::class)->group(function () {
     Route::get('/about', 'Index')->name('about.page')->middleware('check');
     Route::get('/contact', 'ContactMethod')->name('cotact.page');
