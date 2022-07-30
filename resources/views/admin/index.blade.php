@@ -98,99 +98,88 @@
         </div><!-- end row -->
 
         <div class="row">
-            <div class="col-xl-6">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="float-end">
-                            <select class="form-select shadow-none form-select-sm">
-                                <option selected>Apr</option>
-                                <option value="1">Mar</option>
-                                <option value="2">Feb</option>
-                                <option value="3">Jan</option>
-                            </select>
+                        <h4 class="card-title">10 Articles best sellers</h4>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <h4 class="card-title mb-4">Monthly Earnings</h4>
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="text-center mt-4">
-                                    <h5>20</h5>
-                                    <p class="mb-2 text-truncate">Market Place</p>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-4">
-                                <div class="text-center mt-4">
-                                    <h5>20</h5>
-                                    <p class="mb-2 text-truncate">Last Week</p>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-4">
-                                <div class="text-center mt-4">
-                                    <h5>60</h5>
-                                    <p class="mb-2 text-truncate">Last Month</p>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
 
-                        <div class="mt-4">
-                            <div id="donut-chart" class="apex-charts"></div>
-                        </div>
                     </div>
-                </div><!-- end card -->
-            </div><!-- end col -->
-            <!-- end col -->
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-body pb-0">
-                        <div class="float-end d-none d-md-inline-block">
-                            <div class="dropdown">
-                                <a class="text-reset" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="text-muted">This Years<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <a class="dropdown-item" href="#">Today</a>
-                                    <a class="dropdown-item" href="#">Last Week</a>
-                                    <a class="dropdown-item" href="#">Last Month</a>
-                                    <a class="dropdown-item" href="#">This Year</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="card-title mb-4">Revenue</h4>
-
-                        <div class="text-center pt-3">
-                            <div class="row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <div>
-                                        <h5>17,493</h5>
-                                        <p class="text-muted text-truncate mb-0">Marketplace</p>
-                                    </div>
-                                </div><!-- end col -->
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <div>
-                                        <h5>$44,960</h5>
-                                        <p class="text-muted text-truncate mb-0">Last Week</p>
-                                    </div>
-                                </div><!-- end col -->
-                                <div class="col-sm-4">
-                                    <div>
-                                        <h5>$29,142</h5>
-                                        <p class="text-muted text-truncate mb-0">Last Month</p>
-                                    </div>
-                                </div><!-- end col -->
-                            </div><!-- end row -->
-                        </div>
-                    </div>
-                    <div class="card-body py-0 px-2">
-                        <div id="column_line_chart" class="apex-charts" dir="ltr"></div>
-                    </div>
-                </div><!-- end card -->
+                </div>
             </div>
-            <!-- end col -->
-        </div>
-        <!-- end row -->
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">10 Articles least sold</h4>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
 
         <!-- end row -->

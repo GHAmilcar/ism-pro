@@ -18,7 +18,7 @@ class Dashboard extends Controller
         $total_ventas += Payment::where('paid_status', 'partial_paid')->sum('paid_amount');
         $total_pending = Payment::where('paid_status','partial_paid')->orWhere('paid_status','full_due')->sum('due_amount');
         $sales_products = InvoiceDetail::all()->sum('selling_qty');
-
+        //$most_sales = InvoiceDetail::all()->orderBy('id', 'desc')->max(10);
          $date = Carbon::now();
          $date = $date->format('Y-m-d');
          $dateDB = Invoice::whereDate('created_at', $date)->get()->count();
@@ -30,6 +30,7 @@ class Dashboard extends Controller
             'total_pending' => $total_pending,
             'date_sales' => $dateDB,
             'sales_products' => $sales_products,
+            //'most_sales' => $most_sales,
         ];
 
         $latest_transactions = InvoiceDetail::all();
