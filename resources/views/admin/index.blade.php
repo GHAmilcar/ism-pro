@@ -106,31 +106,20 @@
                             <table class="table mb-0">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Username</th>
+
+                                        <th>Product Name</th>
+                                        <th class="text-center">Selling Quantity</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
+
+                                        @foreach($most_sales as $key => $value)
+                                        <tr>
+                                            <td>{{$value->name}}</td>
+                                            <td class="text-center">{{($value->total_sale)}}</td>
+                                        </tr>
+                                        @endforeach
+
                                 </tbody>
                             </table>
                         </div>
@@ -148,31 +137,17 @@
 
                                 <thead class="table-light">
                                     <tr>
-                                        <th>#</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Username</th>
+                                        <th>Product Name</th>
+                                        <th>Selling Quantity</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($least_sold as $key => $value)
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <td>{{$value->name}}</td>
+                                        <td class="text-center">{{($value->total_sale)}}</td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
